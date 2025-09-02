@@ -1,0 +1,50 @@
+# Angular build and environment files
+/dist
+/out-tsc
+/tmp
+/.angular
+
+# Node dependencies
+/node_modules
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+.vscode/
+*.code-workspace
+
+# Environment files
+/src/environments/environment*.ts
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Compiled output
+*.js
+*.js.map
+*.css
+*.css.map
+
+# Coverage reports
+/coverage
+
+# Angular Language Service cache
+/.angular/cache
+
+# Package-lock and yarn lock (optional based on package manager)
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg custom-navbar shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
+      <i class="bi bi-person-plus-fill fs-4 text-primary"></i>
+      <span class="fs-5 fw-semibold text-dark">Employee Management System</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <ul class="navbar-nav gap-3 align-items-center">
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" routerLink="/employee">
+            <i class="bi bi-person-plus"></i> New Employee
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" routerLink="/newlist">
+            <i class="bi bi-card-list"></i> List
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" routerLink="/master">
+            <i class="bi bi-ui-checks"></i> Master
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" routerLink="/company">
+            <i class="bi bi-building"></i> Company
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>

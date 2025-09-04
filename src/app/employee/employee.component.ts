@@ -1,6 +1,6 @@
 
 import { Component, inject, OnInit } from '@angular/core';
-import { formatDate, UpperCasePipe } from '@angular/common';
+import { formatDate, NgFor, UpperCasePipe } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { StepperModule } from 'primeng/stepper';
 import {AbstractControl, FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
@@ -12,7 +12,7 @@ import { DatePickerModule } from 'primeng/datepicker';
 @Component({
   selector: 'app-employee',
   standalone:true,
-  imports: [ButtonModule,StepperModule,ReactiveFormsModule,CommonModule,DatePickerModule],
+  imports: [ButtonModule,StepperModule,ReactiveFormsModule,CommonModule,DatePickerModule,NgFor],
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.css'
 })
@@ -45,7 +45,7 @@ export class EmployeeComponent implements OnInit {
         cardNo:[''],
         postAppliedFor:['',Validators.required],
         designation:['',Validators.required],
-        entryDate:[''],
+        entryDate:[new Date()],
         fullName:['',Validators.required],
         department:['',Validators.required],
         subDepartment:['',Validators.required],

@@ -67,6 +67,313 @@
           </div>
         </div>
         <div class="row g-3">
+          <!-- Name in Capital Letters -->
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="form-label d-block mb-1">Name in Capital Letters<span style="color: red;">*</span></label>
+              <input type="text" class="form-control rounded-1" placeholder="Name in Capital Letters"
+                formControlName="fullName">
+              <div class="text-danger" style="min-height: 1.25rem;">
+                <span
+                  *ngIf="personalInfoForm.controls['fullName'].touched || personalInfoForm.controls['fullName'].dirty">
+                  <span *ngIf="personalInfoForm.controls['fullName'].errors?.['required']">This is Required</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- Father's/Husband's Name -->
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="form-label d-block mb-1 required">Father's/Husband's Name<span
+                  style="color: red;">*</span></label>
+              <input type="text" class="form-control rounded-1" placeholder="Enter Your Father/Husband Name"
+                formControlName="fatherOrHusbandName">
+              <div class="text-danger" style="min-height: 1.25rem;">
+                <span
+                  *ngIf="personalInfoForm.controls['fatherOrHusbandName'].touched || personalInfoForm.controls['fatherOrHusbandName'].dirty">
+                  <span *ngIf="personalInfoForm.controls['fatherOrHusbandName'].errors?.['required']">This is
+                    Required</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- Mother's Name -->
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="form-label d-block mb-1">Mother's Name</label>
+              <input type="text" class="form-control rounded-1" placeholder="Enter Your Mother Name"
+                formControlName="motherName">
+              <div class="text-danger" style="min-height: 1.25rem;">
+                <span
+                  *ngIf="personalInfoForm.controls['motherName'].touched || personalInfoForm.controls['motherName'].dirty">
+                  <span *ngIf="personalInfoForm.controls['motherName'].errors?.['required']">This is Required</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- Date of Birth -->
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="form-label">Date of Birth</label>
+              <input type="date" class="form-control rounded-1" formControlName="dateOfBirth">
+              <div class="text-danger mt-1" style="min-height: 1.25rem;">
+                <span
+                  [class.invisible]="!(personalInfoForm.controls['dateOfBirth'].touched || personalInfoForm.controls['dateOfBirth'].dirty)">
+                  <span *ngIf="personalInfoForm.controls['dateOfBirth'].errors?.['required']">This is Required</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third Row -->
+        <div class="row g-3">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="form-label">Gender<span style="color: red;">*</span></label>
+              <select class="form-select form-select rounded-1" formControlName="gender">
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select>
+              <div class="text-danger mt-1" style="min-height: 1.25rem;">
+                <span
+                  [class.invisible]="!(personalInfoForm.controls['gender'].touched || personalInfoForm.controls['gender'].dirty)">
+                  <span *ngIf="personalInfoForm.controls['gender'].errors?.['required']">This is Required</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- Age -->
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="form-label">Age<span style="color: red;">*</span></label>
+              <input type="number" class="form-control rounded-1" formControlName="age">
+              <div class="text-danger mt-1" style="min-height: 1.25rem;">
+                <span
+                  [class.invisible]="!(personalInfoForm.controls['age'].touched || personalInfoForm.controls['age'].dirty)">
+                  <span *ngIf="personalInfoForm.controls['age'].errors?.['required']">This is Required</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- Marital Status -->
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="form-label">Marital Status<span style="color: red;">*</span></label>
+              <select class="form-select form-select rounded-1" formControlName="maritalStatus">
+                <option value="" disabled selected>Select Marital Status</option>
+                <option value="Married">Married</option>
+                <option value="Unmarried">Unmarried</option>
+              </select>
+              <div class="text-danger mt-1" style="min-height: 1.25rem;">
+                <span
+                  [class.invisible]="!(personalInfoForm.controls['maritalStatus'].touched || personalInfoForm.controls['maritalStatus'].dirty)">
+                  <span *ngIf="personalInfoForm.controls['maritalStatus'].errors?.['required']">This is Required</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="form-label">Religion</label>
+              <input type="text" class="form-control rounded-1" formControlName="religion">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['religion'].touched || personalInfoForm.controls['religion'].dirty">
+                <span *ngIf="personalInfoForm.controls['religion'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Nationality</label>
+              <input type="text" class="form-control rounded-1" placeholder="" formControlName="nationality">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['nationality'].touched || personalInfoForm.controls['nationality'].dirty">
+                <span *ngIf="personalInfoForm.controls['nationality'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Caste</label>
+              <input type="text" class="form-control rounded-1" formControlName="caste">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['caste'].touched || personalInfoForm.controls['caste'].dirty">
+                <span *ngIf="personalInfoForm.controls['caste'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Blood Group</label>
+              <input type="text" class="form-control rounded-1" formControlName="bloodGroup">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['bloodGroup'].touched || personalInfoForm.controls['bloodGroup'].dirty">
+                <span *ngIf="personalInfoForm.controls['bloodGroup'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Weight</label>
+              <input type="text" class="form-control rounded-1" formControlName="weight">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['weight'].touched || personalInfoForm.controls['weight'].dirty">
+                <span *ngIf="personalInfoForm.controls['weight'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Region</label>
+              <input type="text" class="form-control rounded-1" formControlName="region">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['region'].touched || personalInfoForm.controls['region'].dirty">
+                <span *ngIf="personalInfoForm.controls['region'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Identity</label>
+              <input type="text" class="form-control rounded-1" formControlName="identityMark">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['identityMark'].touched || personalInfoForm.controls['identityMark'].dirty">
+                <span *ngIf="personalInfoForm.controls['identityMark'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mb-0">
+
+          <!-- Date of Birth -->
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="text" class="form-control rounded-1" formControlName="email">
+              <div class="text-danger"
+                *ngIf="contactFamilyForm.controls['email'].touched || contactFamilyForm.controls['email'].dirty">
+                <span *ngIf="contactFamilyForm.controls['email'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="form-group mb-2">
+              <label class="form-label">Phone Number</label>
+              <input type="text" class="form-control rounded-1" formControlName="phone1">
+              <div class="text-danger"
+                *ngIf="contactFamilyForm.controls['phone1'].touched || contactFamilyForm.controls['phone1'].dirty">
+                <span *ngIf="contactFamilyForm.controls['phone1'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="form-group">
+              <label class="form-label">Whatsapp No.</label>
+              <input type="text" class="form-control rounded-1" formControlName="whatsappNo">
+              <div class="text-danger"
+                *ngIf="contactFamilyForm.controls['whatsappNo'].touched || contactFamilyForm.controls['whatsappNo'].dirty">
+                <span *ngIf="contactFamilyForm.controls['whatsappNo'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Pan Card No:</label>
+              <input type="text" class="form-control rounded-1" placeholder="Enter PAN (e.g., ABCDE1234F)"
+                title="PAN format: ABCDE1234F" formControlName="panCardNo">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['panCardNo'].touched || personalInfoForm.controls['panCardNo'].dirty">
+                <span *ngIf="personalInfoForm.controls['panCardNo'].errors?.['required']">This is
+                  Required</span>
+                <span *ngIf="personalInfoForm.controls['panCardNo'].errors?.['pattern']">Pan Card Not
+                  Valid</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">PF UAN No:</label>
+              <input type="text" class="form-control rounded-1" formControlName="pfUanNo">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['pfUanNo'].touched || personalInfoForm.controls['pfUanNo'].dirty">
+                <span *ngIf="personalInfoForm.controls['pfUanNo'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Bank A/c No:</label>
+              <input type="text" class="form-control rounded-1" formControlName="bankAccountNo">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['bankAccountNo'].touched || personalInfoForm.controls['bankAccountNo'].dirty">
+                <span *ngIf="personalInfoForm.controls['bankAccountNo'].errors?.['required']">This is Required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-3">
+
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Bank Name:</label>
+              <input type="text" class="form-control rounded-1" formControlName="bankName">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['bankName'].touched || personalInfoForm.controls['bankName'].dirty">
+                <span *ngIf="personalInfoForm.controls['bankName'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Bank IFSC Code:</label>
+              <input type="text" class="form-control rounded-1" formControlName="bankIfscCode">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['bankIfscCode'].touched || personalInfoForm.controls['bankIfscCode'].dirty">
+                <span *ngIf="personalInfoForm.controls['bankIfscCode'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="form-label">Branch:</label>
+              <input type="text" class="form-control rounded-1" formControlName="bankBranch">
+              <div class="text-danger"
+                *ngIf="personalInfoForm.controls['bankBranch'].touched || personalInfoForm.controls['bankBranch'].dirty">
+                <span *ngIf="personalInfoForm.controls['bankBranch'].errors?.['required']">This is
+                  Required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card-header py-1">Employee Information</div>
+          </div>
+        </div>
+        <div class="row g-3">
           <!-- Post Applied For -->
           <div class="col-md-3">
             <div class="form-group">
@@ -140,8 +447,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Third Row -->
         <div class="row g-3">
           <!-- Shifted 2 columns to the right -->
           <div class="col-md-3">
@@ -158,6 +463,19 @@
               <div class="text-danger"
                 *ngIf="personalInfoForm.controls['division'].touched || personalInfoForm.controls['division'].dirty">
                 <span *ngIf="personalInfoForm.controls['division'].errors?.['required']">This is Required</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="form-group mb-2">
+              <label class="form-label">Sub Division</label>
+              <input type="text" class="form-control rounded-1" placeholder="Enter subDivision"
+                formControlName="subDivision">
+              <div class="text-danger"
+                *ngIf="contactFamilyForm.controls['subDivision'].touched || contactFamilyForm.controls['subDivision'].dirty">
+                <span *ngIf="contactFamilyForm.controls['subDivision'].errors?.['required']">This is
+                  Required</span>
               </div>
             </div>
           </div>
@@ -197,6 +515,10 @@
               </div>
             </div>
           </div>
+
+
+        </div>
+        <div class="row g-3">
           <!-- Company -->
           <div class="col-md-3">
             <div class="form-group">
@@ -213,9 +535,6 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="row g-3">
           <div class="col-md-3">
             <div class="form-group">
               <label class="form-label">Location<span style="color: red;">*</span></label>
@@ -265,254 +584,8 @@
               </div>
             </div>
           </div>
-           <!-- Name in Capital Letters -->
-           <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label d-block mb-1">Name in Capital Letters<span style="color: red;">*</span></label>
-              <input type="text" class="form-control rounded-1" placeholder="Name in Capital Letters"
-                formControlName="fullName">
-              <div class="text-danger" style="min-height: 1.25rem;">
-                <span
-                  *ngIf="personalInfoForm.controls['fullName'].touched || personalInfoForm.controls['fullName'].dirty">
-                  <span *ngIf="personalInfoForm.controls['fullName'].errors?.['required']">This is Required</span>
-                </span>
-              </div>
-            </div>
-          </div>
         </div>
-        <!-- Fourth Row -->
         <div class="row g-3">
-         
-          <!-- Father's/Husband's Name -->
-          <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label d-block mb-1 required">Father's/Husband's Name<span
-                  style="color: red;">*</span></label>
-              <input type="text" class="form-control rounded-1" placeholder="Enter Your Father/Husband Name"
-                formControlName="fatherOrHusbandName">
-              <div class="text-danger" style="min-height: 1.25rem;">
-                <span
-                  *ngIf="personalInfoForm.controls['fatherOrHusbandName'].touched || personalInfoForm.controls['fatherOrHusbandName'].dirty">
-                  <span *ngIf="personalInfoForm.controls['fatherOrHusbandName'].errors?.['required']">This is
-                    Required</span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <!-- Mother's Name -->
-          <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label d-block mb-1">Mother's Name</label>
-              <input type="text" class="form-control rounded-1" placeholder="Enter Your Mother Name"
-                formControlName="motherName">
-              <div class="text-danger" style="min-height: 1.25rem;">
-                <span
-                  *ngIf="personalInfoForm.controls['motherName'].touched || personalInfoForm.controls['motherName'].dirty">
-                  <span *ngIf="personalInfoForm.controls['motherName'].errors?.['required']">This is Required</span>
-                </span>
-              </div>
-            </div>
-          </div>
-           <!-- Date of Birth -->
-           <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label">Date of Birth</label>
-              <input type="date" class="form-control rounded-1" formControlName="dateOfBirth">
-              <div class="text-danger mt-1" style="min-height: 1.25rem;">
-                <span
-                  [class.invisible]="!(personalInfoForm.controls['dateOfBirth'].touched || personalInfoForm.controls['dateOfBirth'].dirty)">
-                  <span *ngIf="personalInfoForm.controls['dateOfBirth'].errors?.['required']">This is Required</span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <!-- Age -->
-          <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label">Age<span style="color: red;">*</span></label>
-              <input type="number" class="form-control rounded-1" formControlName="age">
-              <div class="text-danger mt-1" style="min-height: 1.25rem;">
-                <span
-                  [class.invisible]="!(personalInfoForm.controls['age'].touched || personalInfoForm.controls['age'].dirty)">
-                  <span *ngIf="personalInfoForm.controls['age'].errors?.['required']">This is Required</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-3 justify-content-start">
-         
-          <!-- Gender -->
-          <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label">Gender<span style="color: red;">*</span></label>
-              <select class="form-select form-select rounded-1" formControlName="gender">
-                <option value="" disabled selected>Select Gender</option>
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-              </select>
-              <div class="text-danger mt-1" style="min-height: 1.25rem;">
-                <span
-                  [class.invisible]="!(personalInfoForm.controls['gender'].touched || personalInfoForm.controls['gender'].dirty)">
-                  <span *ngIf="personalInfoForm.controls['gender'].errors?.['required']">This is Required</span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <!-- Marital Status -->
-          <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label">Marital Status<span style="color: red;">*</span></label>
-              <select class="form-select form-select rounded-1" formControlName="maritalStatus">
-                <option value="" disabled selected>Select Marital Status</option>
-                <option value="Married">Married</option>
-                <option value="Unmarried">Unmarried</option>
-              </select>
-              <div class="text-danger mt-1" style="min-height: 1.25rem;">
-                <span
-                  [class.invisible]="!(personalInfoForm.controls['maritalStatus'].touched || personalInfoForm.controls['maritalStatus'].dirty)">
-                  <span *ngIf="personalInfoForm.controls['maritalStatus'].errors?.['required']">This is Required</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-3">
-          <div class="col-md-2">
-            <div class="form-group">
-              <label class="form-label">Religion</label>
-              <input type="text" class="form-control rounded-1" formControlName="religion">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['religion'].touched || personalInfoForm.controls['religion'].dirty">
-                <span *ngIf="personalInfoForm.controls['religion'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="form-group">
-              <label class="form-label">Nationality</label>
-              <input type="text" class="form-control rounded-1" placeholder="" formControlName="nationality">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['nationality'].touched || personalInfoForm.controls['nationality'].dirty">
-                <span *ngIf="personalInfoForm.controls['nationality'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="form-group">
-              <label class="form-label">Caste</label>
-              <input type="text" class="form-control rounded-1" formControlName="caste">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['caste'].touched || personalInfoForm.controls['caste'].dirty">
-                <span *ngIf="personalInfoForm.controls['caste'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="form-group">
-              <label class="form-label">Blood Group</label>
-              <input type="text" class="form-control rounded-1" formControlName="bloodGroup">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['bloodGroup'].touched || personalInfoForm.controls['bloodGroup'].dirty">
-                <span *ngIf="personalInfoForm.controls['bloodGroup'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="form-group">
-              <label class="form-label">Weight</label>
-              <input type="text" class="form-control rounded-1" formControlName="weight">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['weight'].touched || personalInfoForm.controls['weight'].dirty">
-                <span *ngIf="personalInfoForm.controls['weight'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="form-group">
-              <label class="form-label">Region</label>
-              <input type="text" class="form-control rounded-1" formControlName="region">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['region'].touched || personalInfoForm.controls['region'].dirty">
-                <span *ngIf="personalInfoForm.controls['region'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Fifth Row -->
-        <div class="row g-3 mb-0">
-          <div class="col-md-4">
-            <div class="form-group">
-              <label class="form-label">Identity</label>
-              <input type="text" class="form-control rounded-1" formControlName="identityMark">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['identityMark'].touched || personalInfoForm.controls['identityMark'].dirty">
-                <span *ngIf="personalInfoForm.controls['identityMark'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <label class="form-label mb-1">Shift Type<span style="color: red;">*</span></label>
-              <select class="form-select form-select" formControlName="shiftType">
-                <option value="" disabled selected>Select Shift Type</option>
-                <option value="Fixed">Fixed</option>
-                <option value="Rotational">Rotational</option>
-              </select>
-              <div class="text-danger mt-1" style="min-height: 1.25rem;">
-                <span
-                  *ngIf="personalInfoForm.controls['shiftType'].touched || personalInfoForm.controls['shiftType'].dirty">
-                  <span *ngIf="personalInfoForm.controls['shiftType'].errors?.['required']">This is Required</span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <label class="form-label">Shift Option<span style="color: red;">*</span></label>
-              <select class="form-select form-select" formControlName="shiftOption">
-                <option disabled>Select
-                </option>
-                @if (masterData) {
-                @for (master of masterData['shiftOption']; track $index) {
-                <option [value]="master.masterId">{{ master.masterName }}</option>
-                }
-                }
-              </select>
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['shiftOption'].touched || personalInfoForm.controls['shiftOption'].dirty">
-                <span *ngIf="personalInfoForm.controls['shiftOption'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-2">
-          <!-- Appointment Mths -->
-          <div class="col-md-2">
-            <div class="form-group w-100">
-              <label class="form-label">Appointment Mths:</label>
-              <input type="number" class="form-control rounded-1" formControlName="appointmentMonths">
-              <div class="text-danger mt-1">
-                <span
-                  *ngIf="personalInfoForm.controls['appointmentMonths'].touched && personalInfoForm.controls['appointmentMonths'].errors?.['required']">
-                  This is Required
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Transfer From -->
           <div class="col-md-3">
             <div class="form-group w-100">
               <label class="form-label">Transfer From</label>
@@ -532,7 +605,19 @@
               </div>
             </div>
           </div>
-
+          <!-- Transfer Date -->
+          <div class="col-md-3">
+            <div class="form-group w-100">
+              <label class="form-label">Transfer Date</label>
+              <input type="date" class="form-control rounded-1" formControlName="transferDate">
+              <div class="text-danger mt-1">
+                <span
+                  *ngIf="personalInfoForm.controls['transferDate'].touched && personalInfoForm.controls['transferDate'].errors?.['required']">
+                  This is Required
+                </span>
+              </div>
+            </div>
+          </div>
           <!-- Transfer To -->
           <div class="col-md-3">
             <div class="form-group w-100">
@@ -553,22 +638,7 @@
               </div>
             </div>
           </div>
-
-          <!-- Transfer Date -->
-          <div class="col-md-2">
-            <div class="form-group w-100">
-              <label class="form-label">Transfer Date</label>
-              <input type="date" class="form-control rounded-1" formControlName="transferDate">
-              <div class="text-danger mt-1">
-                <span
-                  *ngIf="personalInfoForm.controls['transferDate'].touched && personalInfoForm.controls['transferDate'].errors?.['required']">
-                  This is Required
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-2">
+          <div class="col-md-3">
             <div class="form-group">
               <label class="form-label">Reporting Date</label>
               <input type="date" class="form-control rounded-1" formControlName="reportingDate">
@@ -580,34 +650,57 @@
             </div>
           </div>
         </div>
-
         <div class="row g-3">
-          <div class="col-md-4">
-            <div class="form-group">
-              <label class="form-label">Pan Card No:</label>
-              <input type="text" class="form-control rounded-1" placeholder="Enter PAN (e.g., ABCDE1234F)"
-                title="PAN format: ABCDE1234F" formControlName="panCardNo">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['panCardNo'].touched || personalInfoForm.controls['panCardNo'].dirty">
-                <span *ngIf="personalInfoForm.controls['panCardNo'].errors?.['required']">This is
-                  Required</span>
-                <span *ngIf="personalInfoForm.controls['panCardNo'].errors?.['pattern']">Pan Card Not
-                  Valid</span>
+          <!-- Appointment Mths -->
+          <div class="col-md-3">
+            <div class="form-group w-100">
+              <label class="form-label">Appointment Mths:</label>
+              <input type="number" class="form-control rounded-1" formControlName="appointmentMonths">
+              <div class="text-danger mt-1">
+                <span
+                  *ngIf="personalInfoForm.controls['appointmentMonths'].touched && personalInfoForm.controls['appointmentMonths'].errors?.['required']">
+                  This is Required
+                </span>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="form-group">
-              <label class="form-label">PF UAN No:</label>
-              <input type="text" class="form-control rounded-1" formControlName="pfUanNo">
+              <label class="form-label mb-1">Shift Type<span style="color: red;">*</span></label>
+              <select class="form-select form-select" formControlName="shiftType">
+                <option value="" disabled selected>Select Shift Type</option>
+                <option value="Fixed">Fixed</option>
+                <option value="Rotational">Rotational</option>
+              </select>
+              <div class="text-danger mt-1" style="min-height: 1.25rem;">
+                <span
+                  *ngIf="personalInfoForm.controls['shiftType'].touched || personalInfoForm.controls['shiftType'].dirty">
+                  <span *ngIf="personalInfoForm.controls['shiftType'].errors?.['required']">This is Required</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="form-label">Shift Option<span style="color: red;">*</span></label>
+              <select class="form-select form-select" formControlName="shiftOption">
+                <option disabled>Select
+                </option>
+                @if (masterData) {
+                @for (master of masterData['shiftOption']; track $index) {
+                <option [value]="master.masterId">{{ master.masterName }}</option>
+                }
+                }
+              </select>
               <div class="text-danger"
-                *ngIf="personalInfoForm.controls['pfUanNo'].touched || personalInfoForm.controls['pfUanNo'].dirty">
-                <span *ngIf="personalInfoForm.controls['pfUanNo'].errors?.['required']">This is
+                *ngIf="personalInfoForm.controls['shiftOption'].touched || personalInfoForm.controls['shiftOption'].dirty">
+                <span *ngIf="personalInfoForm.controls['shiftOption'].errors?.['required']">This is
                   Required</span>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+
+          <div class="col-md-3">
             <div class="form-group">
               <label class="form-label">Worker No(LWF):</label>
               <input type="text" class="form-control rounded-1" formControlName="workerLwfNo">
@@ -618,55 +711,12 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="row g-3">
-          <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label">Bank A/c No:</label>
-              <input type="text" class="form-control rounded-1" formControlName="bankAccountNo">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['bankAccountNo'].touched || personalInfoForm.controls['bankAccountNo'].dirty">
-                <span *ngIf="personalInfoForm.controls['bankAccountNo'].errors?.['required']">This is Required</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label">Bank Name:</label>
-              <input type="text" class="form-control rounded-1" formControlName="bankName">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['bankName'].touched || personalInfoForm.controls['bankName'].dirty">
-                <span *ngIf="personalInfoForm.controls['bankName'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label">Bank IFSC Code:</label>
-              <input type="text" class="form-control rounded-1" formControlName="bankIfscCode">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['bankIfscCode'].touched || personalInfoForm.controls['bankIfscCode'].dirty">
-                <span *ngIf="personalInfoForm.controls['bankIfscCode'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="form-group">
-              <label class="form-label">Branch:</label>
-              <input type="text" class="form-control rounded-1" formControlName="bankBranch">
-              <div class="text-danger"
-                *ngIf="personalInfoForm.controls['bankBranch'].touched || personalInfoForm.controls['bankBranch'].dirty">
-                <span *ngIf="personalInfoForm.controls['bankBranch'].errors?.['required']">This is
-                  Required</span>
-              </div>
-            </div>
-          </div>
         </div>
-
       </div>
+
+
+
 
     </div>
 
